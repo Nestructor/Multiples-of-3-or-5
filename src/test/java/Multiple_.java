@@ -1,42 +1,35 @@
-import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@RunWith(org.junit.runners.Parameterized.class)
 public class Multiple_ {
 
-    private Multiple multiple;
+    private Multiple multiple = new Multiple();
+    private final int number;
+    private final int value;
 
-    @Before
-    public void setUp() {
-        multiple = new Multiple();
+    public Multiple_(int number, int value) {
+        this.number = number;
+        this.value = value;
     }
 
     @Test
-    public void given_negative_number_should_return_0() {
-        assertThat(multiple.of(-1)).isEqualTo(0);
+    public void execute() {
+        assertThat(multiple.of(number)).isEqualTo(value);
     }
 
-    @Test
-    public void given_3_should_return_0() {
-        assertThat(multiple.of(3)).isEqualTo(0);
+    @Parameterized.Parameters
+    public static Object[][] cases() {
+        return new Object[][]{
+                {-1, 0},
+                {3, 0},
+                {4, 3},
+                {10, 23},
+                {16, 60},
+        };
     }
-
-    @Test
-    public void given_4_should_return_3() {
-        assertThat(multiple.of(4)).isEqualTo(3);
-    }
-
-    @Test
-    public void given_10_should_return_23() {
-        assertThat(multiple.of(10)).isEqualTo(23);
-    }
-
-
-    @Test
-    public void given_16_should_return_50() {
-        assertThat(multiple.of(16)).isEqualTo(60);
-    }
-
 
 }
