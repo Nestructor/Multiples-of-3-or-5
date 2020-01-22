@@ -21,6 +21,11 @@ public class Multiple_ {
     public void given_3_should_return_0() {
         assertThat(multiple.of(3)).isEqualTo(0);
     }
-    
+
+    @Test
+    public void given_4_should_return_3() {
+        assertThat(multiple.of(4)).isEqualTo(3);
+    }
+
 
 }
