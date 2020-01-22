@@ -27,5 +27,10 @@ public class Multiple_ {
         assertThat(multiple.of(4)).isEqualTo(3);
     }
 
+    @Test
+    public void given_10_should_return_23() {
+        assertThat(multiple.of(9)).isEqualTo(23);
+    }
+
 
 }
