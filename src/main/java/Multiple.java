@@ -6,8 +6,8 @@ public class Multiple {
 
     private int processInterval(int number) {
         int adder = 0;
-        for (int i = 1; i <= number; i++) {
-            if(isMultiple(i)) adder += i;
+        for (int i = 1; i < number; i++) {
+            if(isMultiple(i))  adder += i;
         }
         return adder;
     }
