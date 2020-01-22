@@ -17,4 +17,10 @@ public class Multiple_ {
         assertThat(multiple.of(-1)).isEqualTo(0);
     }
 
+    @Test
+    public void given_3_should_return_0() {
+        assertThat(multiple.of(3)).isEqualTo(0);
+    }
+    
+
 }
